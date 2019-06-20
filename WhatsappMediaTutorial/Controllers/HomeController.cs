@@ -10,13 +10,14 @@ using Microsoft.Win32;
 using System.Net;
 using System;
 using System.IO;
+using Twilio.TwiML.Messaging;
 
 namespace WhatsappMediaTutorial.Controllers
 {
     public class WhatsAppMediaController : TwilioController
     {
-        string GOOD_BOY_URL = "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?ixlib=" +
-           "rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80";
+        public static Uri GOOD_BOY_URL = new Uri("https://images.unsplash.com/photo-1518717758536-85ae29035b6d?ixlib=" +
+           "rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
         
         public virtual SystemWebClient webClient()
         {
@@ -49,6 +50,7 @@ namespace WhatsappMediaTutorial.Controllers
             {
                 response.Message("Send us an image!");
             }
+            response.Append(new Media(GOOD_BOY_URL));
 
             return TwiML(response);
         }

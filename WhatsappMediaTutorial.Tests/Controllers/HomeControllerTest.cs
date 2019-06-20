@@ -10,6 +10,7 @@ using Moq;
 using Newtonsoft.Json;
 using Twilio.AspNet.Mvc;
 using Twilio.TwiML;
+using Twilio.TwiML.Messaging;
 using WhatsappMediaTutorial.Controllers;
 
 
@@ -81,6 +82,7 @@ namespace WhatsappMediaTutorial.Tests.Controllers
 
             var expectedTwimlResponse = new MessagingResponse();
             expectedTwimlResponse.Message("Thanks for the image(s)");
+            expectedTwimlResponse.Append(new Media(WhatsAppMediaController.GOOD_BOY_URL));
             var expectedTwimlResult = new TwiMLResult(expectedTwimlResponse);
 
             // Assert
