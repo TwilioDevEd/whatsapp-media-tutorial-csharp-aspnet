@@ -29,28 +29,16 @@ namespace WhatsappMediaTutorial.Controllers
         {
             var numMedia = int.Parse(formCollection["NumMedia"]);
 
-            foreach (int resourceId in Range(0, numMedia))
-            {
-                var mediaUrl = formCollection[$"MediaUrl{resourceId}"];
-                var mimeType = formCollection[$"MediaContentType{resourceId}"];
-                var fileExtension = GetDefaultExtension(mimeType);
-                var fileName = mediaUrl.Split('/').Last();
-                var filePath = AppDataDirectory + fileName + "." + fileExtension;
-                Debug.WriteLine(mediaUrl);
-                Debug.WriteLine(filePath);
-                webClient().DownloadFile(mediaUrl, filePath);
-            }
-
             var response = new MessagingResponse();
 
             if (numMedia > 0)
             {
-                response.Message("Thanks for the image(s)");
+                response.Message("Thanks for the image! Here's one for you!");
+                response.Append(new Media(GOOD_BOY_URL));
             } else
             {
                 response.Message("Send us an image!");
             }
-            response.Append(new Media(GOOD_BOY_URL));
 
             return TwiML(response);
         }
