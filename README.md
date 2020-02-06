@@ -5,7 +5,7 @@
 # Receive, Download, and Reply with media in WhatsApp Messages. Powered by Twilio - C#/Asp.NET
 
 Use Twilio to receive WhatsApp media messages. For a step-by-step tutorial see
-the [Twilio docs](https://www.twilio.com/docs/sms/tutorials/send-and-receive-media-messages-whatsapp-csharp-aspnet).
+the [Twilio docs](https://www.twilio.com/docs/sms/whatsapp/tutorial/send-and-receive-media-messages-whatsapp-csharp-aspnet).
 
 ## Local development
 
