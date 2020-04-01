@@ -33,8 +33,10 @@ namespace WhatsappMediaTutorial.Controllers
 
             if (numMedia > 0)
             {
-                response.Message("Thanks for the image! Here's one for you!");
-                response.Append(new Media(GOOD_BOY_URL));
+                var message = new Message();
+                message.Body("Thanks for the image! Here's one for you!");
+                message.Media(GOOD_BOY_URL);
+                response.Append(message);
             } else
             {
                 response.Message("Send us an image!");
