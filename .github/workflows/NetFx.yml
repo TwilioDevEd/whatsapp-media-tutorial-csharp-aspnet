@@ -30,4 +30,4 @@ jobs:
       run: msbuild WhatsappMediaTutorial.sln /verbosity:minimal
 
     - name: Run Tests with VSTest
-      run: vstest.console.exe /Platform:x64 WhatsappMediaTutorial.Test\bin\Debug\WhatsappMediaTutorial.Test.dll
+      run: vstest.console.exe /Platform:x64 .\WhatsappMediaTutorial.Tests\bin\Debug\WhatsappMediaTutorial.Tests.dll
