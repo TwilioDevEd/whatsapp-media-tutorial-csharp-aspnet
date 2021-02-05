@@ -4,6 +4,8 @@
 
 # Receive, Download, and Reply with media in WhatsApp Messages. Powered by Twilio - C#/Asp.NET
 
+![](https://github.com/TwilioDevEd/whatsapp-media-tutorial-csharp-aspnet/workflows/NetFx/badge.svg)
+
 Use Twilio to receive WhatsApp media messages. For a step-by-step tutorial see
 the [Twilio docs](https://www.twilio.com/docs/sms/whatsapp/tutorial/send-and-receive-media-messages-whatsapp-csharp-aspnet).
 
@@ -24,7 +26,7 @@ To run the app locally:
    nuget restore
    ```
 
-1. Run the application with `f5`.
+1. Run the application with `f5`. Ignore the 404 error you will see on the browser since you only need the server.
 
 1. Expose your application to the wider internet using
    [ngrok](http://ngrok.com/). This step is important because the
